@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">App2</string>
+    <string name="txt_view_String">Estatus del Alumno</string>
+    <string name="txt_matematicas_String">Matematicas</string>
+    <string name="txt_fisica_String">Fisica</string>
+    <string name="txt_quimica_String">Quimica</string>
+    <string name="txt_button_String">EVALUAR</string>
 </resources>
