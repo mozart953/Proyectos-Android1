@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">App5</string>
+    <string name="txt1">Ingresar valor 1</string>
+    <string name="txt2">Ingresar valor 2</string>
+    <string name="check1">Suma</string>
+    <string name="check2">Resta</string>
+    <string name="button">Calcular</string>
+    <string name="resultado">Resultado</string>
 </resources>
