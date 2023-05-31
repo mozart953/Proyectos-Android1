@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">App6</string>
+    <string name="valor1">Ingresa el valor 1</string>
+    <string name="valor2">Ingresa el valor 2</string>
+    <string name="result">Resultado</string>
+    <string name="calcular">Calcular</string>
+</resources>
