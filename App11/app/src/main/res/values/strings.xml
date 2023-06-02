@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">App11</string>
+    <string name="etNombre1">Nombre</string>
+    <string name="etNombre2">Nombre</string>
+    <string name="botonEnviar">Enviar</string>
+    <string name="botonRegresar">Regresar</string>
+</resources>
