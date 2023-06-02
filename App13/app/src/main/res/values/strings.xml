@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">App13</string>
+    <string name="txt_mail">Ingrese su Email</string>
+    <string name="button">Guardar</string>
+</resources>
