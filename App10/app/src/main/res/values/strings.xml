@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">App10</string>
+    <string name="PrimerActivity">Primer Activity</string>
+    <string name="boton">Siguiente</string>
+    <string name="PrimerActivity2">Segundo Activity</string>
+    <string name="boton2">Siguiente</string>
+</resources>
