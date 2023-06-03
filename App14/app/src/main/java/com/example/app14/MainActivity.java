@@ -33,4 +33,17 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "El contacto ha sido guardado", Toast.LENGTH_LONG).show();
 
     }
+    public void Buscar(View view){
+        String nombre = et_nombre.getText().toString();
+        SharedPreferences preferencias = getSharedPreferences("agenda", Context.MODE_PRIVATE);
+        String datos = preferencias.getString(nombre, "");
+
+        if(datos.length()==0){
+            Toast.makeText(this, "No se encontro ningun registro", Toast.LENGTH_LONG).show();
+        }else{
+            et_datos.setText(datos);
+
+        }
+    }
+
 }
