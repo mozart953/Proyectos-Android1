@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void Guardar (View view){
         try {
-            OutputStreamWriter archivo  = new OutputStreamWriter(openFileOutput("bitacora.txt", Activity.MODE_PRIVATE);
+            OutputStreamWriter archivo = new OutputStreamWriter(openFileOutput("bitacora.txt", Activity.MODE_PRIVATE));
             archivo.write(et1.getText().toString());
             archivo.flush();
             archivo.close();
