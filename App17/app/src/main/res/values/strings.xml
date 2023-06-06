@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">App17</string>
+    <string name="txt_codigo">Codigo del Producto</string>
+    <string name="txt_descripcion">Descripicon del Producto</string>
+    <string name="txt_precio">Precio del producto</string>
+    <string name="BotonRegistrar">Registrar Producto</string>
+    <string name="Buscar">Buscar Procuto</string>
+    <string name="Eliminar">Eliminar Producto</string>
+    <string name="BotonModificar">Modificar Producto</string>
+</resources>
