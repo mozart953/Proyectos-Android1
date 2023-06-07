@@ -78,6 +78,37 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+    //Metodo para eliminar
+
+    public void Eliminar (View view){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper
+                (this, "administracion",null, 1 );
+
+        SQLiteDatabase BaseDatabase = admin.getReadableDatabase();
+
+        String codigo = et_codigo.getText().toString();
+
+        if(!codigo.isEmpty()){
+            int cantidad = BaseDatabase.delete("articulos", "codigo="+  codigo, null);
+            BaseDatabase.close();
+
+            et_codigo.setText("");
+            et_descripcion.setText("");
+            et_precio.setText("");
+
+            if(cantidad == 1){
+                Toast.makeText(this, "Articulo eliminado exitosamente", Toast.LENGTH_SHORT).show();
+
+            }else{
+                Toast.makeText(this, "El articulo no existe", Toast.LENGTH_SHORT).show();
+            }
+
+        }else{
+            Toast.makeText(this, "Debes introducir el codigo del articulo", Toast.LENGTH_LONG).show();
+
+        }
+    }
+
 
 
 }
