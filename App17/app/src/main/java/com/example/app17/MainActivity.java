@@ -108,6 +108,42 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+    //Metodo para modificar
+
+    public void Modificar(View view){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
+        SQLiteDatabase BaseDatabase = admin.getWritableDatabase();
+
+        String codigo = et_codigo.getText().toString();
+        String descripcion = et_descripcion.getText().toString();
+        String precio = et_precio.getText().toString();
+
+        if(!codigo.isEmpty() && !descripcion.isEmpty() && !precio.isEmpty()){
+            ContentValues registro = new ContentValues();
+            registro.put("codigo", codigo);
+            registro.put("descripcion", descripcion);
+            registro.put("precio", precio);
+
+            int cantidad = BaseDatabase.update("articulos",registro,"codigo="+codigo,null);
+
+            if( cantidad==1){
+                Toast.makeText(this, "Articulo modificado correctamente", Toast.LENGTH_SHORT).show();
+
+            }else{
+                Toast.makeText(this, "El articulo no existe", Toast.LENGTH_SHORT).show();
+
+            }
+
+        }else{
+            Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_LONG).show();
+            BaseDatabase.close();
+
+
+
+
+        }
+
+    }
 
 
 
