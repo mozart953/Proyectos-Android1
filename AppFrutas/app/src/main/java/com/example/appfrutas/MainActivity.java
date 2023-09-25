@@ -3,6 +3,8 @@ package com.example.appfrutas;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -50,6 +52,23 @@ public class MainActivity extends AppCompatActivity {
             id = getResources().getIdentifier("uva", "drawable", getPackageName());
             iv_personaje.setImageResource(id);
         }
+
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "BD", null, 1);
+        SQLiteDatabase BD = admin.getWritableDatabase(); //abrir base de datos
+
+        Cursor consulta = BD.rawQuery(
+                "select * from puntaje where score = (select max(score) from puntaje)", null);
+
+        if(consulta.moveToFirst()){
+            String temp_nombre = consulta.getString(0);
+            String temp_score = consulta.getString(1);
+            tv_bestScore.setText("Record: " + temp_score + " de " + temp_nombre);
+            BD.close();
+        }else{
+            BD.close();
+        }
+
+
 
         mp= MediaPlayer.create(this, R.raw.alphabet_song);
         mp.start();
