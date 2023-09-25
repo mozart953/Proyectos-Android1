@@ -60,4 +60,5 @@
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/txt_2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

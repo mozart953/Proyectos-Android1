@@ -4,4 +4,6 @@
     <string name="boton">Siguiente</string>
     <string name="PrimerActivity2">Segundo Activity</string>
     <string name="boton2">Siguiente</string>
+    <string name="PrimerActivity3">Tercer Activity</string>
+    <string name="boton3">Siguiente</string>
 </resources>

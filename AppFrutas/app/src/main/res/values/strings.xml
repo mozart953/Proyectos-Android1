@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AppFrutas</string>
+    <string name="el_nombre">¿Cómo te llamas?</string>
+    <string name="boton">Jugar</string>
+</resources>
