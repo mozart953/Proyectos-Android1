@@ -160,7 +160,7 @@ public class MainActivity_Nivel2 extends AppCompatActivity {
             string_vidas = String.valueOf(vidas);
             intent.putExtra("jugador", nombre_jugador);
             intent.putExtra("score", string_score);
-            intent.putExtra("vidas", string_vidas); 
+            intent.putExtra("vidas", string_vidas);
 
             startActivity(intent);
             finish();
