@@ -14,10 +14,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity2_Nivel4 extends AppCompatActivity {
+
+public class MainActivity2_Nivel5 extends AppCompatActivity {
 
     private TextView tv_nombre, tv_score;
-    private ImageView iv_Auno, iv_Ados, iv_vidas, iv_signo;
+    private ImageView iv_Auno, iv_Ados, iv_vidas;
     private EditText et_respuesta;
     private MediaPlayer mp, mp_great, mp_bad;
 
@@ -31,17 +32,16 @@ public class MainActivity2_Nivel4 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_activity2__nivel4);
+        setContentView(R.layout.activity_main_activity2__nivel5);
 
 
-        Toast.makeText(this,"Nivel 4 - Sumas y Restas", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Nivel 5 - Multiplicaciones", Toast.LENGTH_SHORT).show();
 
         tv_nombre = (TextView) findViewById(R.id.textView_Nombre);
         tv_score = (TextView) findViewById(R.id.textView_score);
         iv_vidas = (ImageView) findViewById(R.id.imageView_vidas);
         iv_Auno = (ImageView) findViewById(R.id.imageView_Num1);
         iv_Ados = (ImageView) findViewById(R.id.imageView_Num2);
-        iv_signo = (ImageView) findViewById(R.id.imageView_signo);
         et_respuesta = (EditText) findViewById(R.id.editText_resultado);
 
         nombre_jugador = getIntent().getStringExtra("jugador");
@@ -131,46 +131,31 @@ public class MainActivity2_Nivel4 extends AppCompatActivity {
     }
 
     public void NumAleatorio(){
-        if(score <= 39){
+        if(score <= 49){
             numAleatorio_uno = (int) (Math.random() * 10);
             numAleatorio_dos = (int) (Math.random() * 10);
 
-            if(numAleatorio_uno>=0 && numAleatorio_dos <=4){
-                resultado = numAleatorio_uno + numAleatorio_dos;
-                iv_signo.setImageResource(R.drawable.adicion);
+            resultado = numAleatorio_uno * numAleatorio_dos;
 
-            }else{
-                resultado = numAleatorio_uno - numAleatorio_dos;
-                iv_signo.setImageResource(R.drawable.resta);
-            }
 
-            if(resultado>=0){
-                for(int i=0;i <numero.length;i++){
-                    //se obtine la imagen a partir de su nombre guardado en el array
-                    int id = getResources().getIdentifier(numero[i],"drawable", getPackageName());
 
-                    if(numAleatorio_uno==i){
-                        iv_Auno.setImageResource(id);
-                    }if(numAleatorio_dos== i){
-                        iv_Ados.setImageResource(id);
+            for(int i=0;i <numero.length;i++){
+                //se obtine la imagen a partir de su nombre guardado en el array
+                int id = getResources().getIdentifier(numero[i],"drawable", getPackageName());
 
-                    }
+                if(numAleatorio_uno==i){
+                    iv_Auno.setImageResource(id);
+                }if(numAleatorio_dos== i){
+                    iv_Ados.setImageResource(id);
+
                 }
-
-
-            }else{
-                NumAleatorio();
             }
-
-
-
-
 
 
 
         }else{
 
-            Intent intent = new Intent(this, MainActivity2_Nivel5.class);
+            Intent intent = new Intent(this, MainActivity_Nivel6.class);
             string_score = String.valueOf(score);
             string_vidas = String.valueOf(vidas);
             intent.putExtra("jugador", nombre_jugador);

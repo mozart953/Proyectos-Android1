@@ -14,8 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity2_Nivel4 extends AppCompatActivity {
-
+public class MainActivity_Nivel6 extends AppCompatActivity {
     private TextView tv_nombre, tv_score;
     private ImageView iv_Auno, iv_Ados, iv_vidas, iv_signo;
     private EditText et_respuesta;
@@ -31,10 +30,10 @@ public class MainActivity2_Nivel4 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_activity2__nivel4);
+        setContentView(R.layout.activity_main__nivel6);
 
 
-        Toast.makeText(this,"Nivel 4 - Sumas y Restas", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Nivel 6 - Sumas, Restas y Multiplicaciones", Toast.LENGTH_SHORT).show();
 
         tv_nombre = (TextView) findViewById(R.id.textView_Nombre);
         tv_score = (TextView) findViewById(R.id.textView_score);
@@ -131,17 +130,20 @@ public class MainActivity2_Nivel4 extends AppCompatActivity {
     }
 
     public void NumAleatorio(){
-        if(score <= 39){
+        if(score <= 1000000){
             numAleatorio_uno = (int) (Math.random() * 10);
             numAleatorio_dos = (int) (Math.random() * 10);
 
-            if(numAleatorio_uno>=0 && numAleatorio_dos <=4){
+            if(numAleatorio_uno>=0 && numAleatorio_dos <=3){
                 resultado = numAleatorio_uno + numAleatorio_dos;
                 iv_signo.setImageResource(R.drawable.adicion);
 
-            }else{
+            }else if(numAleatorio_uno>=4 && numAleatorio_dos<=7){
                 resultado = numAleatorio_uno - numAleatorio_dos;
                 iv_signo.setImageResource(R.drawable.resta);
+            }else{
+                resultado = numAleatorio_uno * numAleatorio_dos;
+                iv_signo.setImageResource(R.drawable.multiplicacion);
             }
 
             if(resultado>=0){
@@ -170,12 +172,8 @@ public class MainActivity2_Nivel4 extends AppCompatActivity {
 
         }else{
 
-            Intent intent = new Intent(this, MainActivity2_Nivel5.class);
-            string_score = String.valueOf(score);
-            string_vidas = String.valueOf(vidas);
-            intent.putExtra("jugador", nombre_jugador);
-            intent.putExtra("score", string_score);
-            intent.putExtra("vidas", string_vidas);
+            Intent intent = new Intent(this, MainActivity.class);
+            Toast.makeText(this, "Eres un geinio!", Toast.LENGTH_SHORT).show();
 
             startActivity(intent);
             finish();
