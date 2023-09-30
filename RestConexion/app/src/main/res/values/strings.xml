@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RestConexion</string>
+    <string name="userid" />
+    <string name="title" />
+    <string name="body" />
+    <string name="enviar" />
+</resources>
