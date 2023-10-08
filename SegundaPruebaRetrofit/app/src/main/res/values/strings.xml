@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SegundaPruebaRetrofit</string>
+    <string name="id_User">UserId</string>
+    <string name="id">ID</string>
+    <string name="title">Title</string>
+    <string name="body">Body</string>
+    <string name="operacion">Realizar operacion</string>
+</resources>
