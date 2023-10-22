@@ -1,14 +1,12 @@
 package com.example.conexion_api.model;
 
-import androidx.annotation.NonNull;
-
 public class Product {
     private int id;
     private String name;
     private int price;
 
 
-    public Product() {
+    public Product(String s, Integer integer) {
     }
 
     public Product(int id, String name, int price) {

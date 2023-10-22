@@ -2,15 +2,19 @@ package com.example.conexion_api;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.conexion_api.activities.CreateActivity;
 import com.example.conexion_api.adapter.ProductsAdapter;
 import com.example.conexion_api.interfaces.CRUDInterface;
 import com.example.conexion_api.model.Product;
 import com.example.conexion_api.utils.Constants;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -25,12 +29,20 @@ public class MainActivity extends AppCompatActivity {
     CRUDInterface crudInterface;
 
     ListView listView;
+    FloatingActionButton createButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = findViewById(R.id.listView);
+        createButton = findViewById(R.id.createButton);
+        createButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                callCreate();
+            }
+        });
         getAll();
     }
 
@@ -65,5 +77,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void callCreate() {
+        Intent intent = new Intent(getApplicationContext(), CreateActivity.class);
+        startActivity(intent);
     }
 }
