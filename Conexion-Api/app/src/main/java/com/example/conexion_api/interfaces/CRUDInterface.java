@@ -9,6 +9,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface CRUDInterface {
@@ -21,5 +22,6 @@ public interface CRUDInterface {
     @POST("product")
     Call<Product> create(@Body ProductDto dto);
 
-
+    @PUT("product/{id}")
+    Call<Product> edit(@Path("id") int id,@Body ProductDto dto);
 }
